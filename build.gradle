@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+bukkit {
+    name = 'servertick'
+    main = 'net.cavoj.servertick.paper.ServerTick'
+
+    // API version (should be set for 1.13+)
+    apiVersion = '1.13'
+
+    permissions {
+        'servertick.metrics' {
+            description = 'Allows the player to receive ServerTick timings'
+            setDefault('OP') // 'TRUE', 'FALSE', 'OP' or 'NOT_OP'
+        }
+    }
+}
+
+repositories {
+    mavenCentral() // This is needed for dependencies.
+    maven { url = 'https://papermc.io/repo/repository/maven-public/' }
+}
+
+dependencies {
+
+}
+
+group 'net.cavoj'
+version '1.0'
+
+dependencies {
+    compileOnly group: "com.destroystokyo.paper", name: "paper-api", version: "1.16.1-R0.1-SNAPSHOT"
+}
+
+publishing {
+    repositories {
+        maven {
+            url = mavenUrl
+            credentials {
+                username mavenUser
+                password mavenPassword
+            }
+        }
+    }
+}

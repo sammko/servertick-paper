@@ -17,18 +17,14 @@ bukkit {
     permissions {
         'servertick.metrics' {
             description = 'Allows the player to receive ServerTick timings'
-            setDefault('OP') // 'TRUE', 'FALSE', 'OP' or 'NOT_OP'
+            setDefault('OP')
         }
     }
 }
 
 repositories {
-    mavenCentral() // This is needed for dependencies.
+    mavenCentral()
     maven { url = 'https://papermc.io/repo/repository/maven-public/' }
-}
-
-dependencies {
-
 }
 
 group 'net.cavoj'

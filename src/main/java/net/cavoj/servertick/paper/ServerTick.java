@@ -22,6 +22,8 @@ public class ServerTick extends JavaPlugin {
         getServer().getMessenger().registerOutgoingPluginChannel(this, Channels.PACKET_FULL_METRICS);
         getServer().getMessenger().registerOutgoingPluginChannel(this, Channels.PACKET_LAST_SAMPLE);
 
+        getServer().getPluginManager().registerEvents(new DisconnectListener(this), this);
+
         (new BukkitRunnable() {
             @Override
             public void run() {

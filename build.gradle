@@ -27,7 +27,7 @@ repositories {
 }
 
 group 'net.cavoj'
-version '1.0'
+version '1.1'
 
 dependencies {
     compileOnly group: "com.destroystokyo.paper", name: "paper-api", version: "1.16.1-R0.1-SNAPSHOT"
